@@ -27,7 +27,7 @@ spec:
             - name: rmq-http
               containerPort: 15672
             - name: prometheus
-              port: 15692
+              containerPort: 15692
           # environment variables
           env:
             - name: RABBITMQ_DEFAULT_USER
