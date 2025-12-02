@@ -29,19 +29,26 @@ spec:
               command:
                 ["mysqladmin", "ping", "-uroot", "-p$MYSQL_ROOT_PASSWORD"]
             initialDelaySeconds: 5
-            periodSeconds: 10
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 5
+
           readinessProbe:
             exec:
               command:
                 ["mysqladmin", "ping", "-uroot", "-p$MYSQL_ROOT_PASSWORD"]
             initialDelaySeconds: 10
-            periodSeconds: 5
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 5
           livenessProbe:
             exec:
               command:
                 ["mysqladmin", "ping", "-uroot", "-p$MYSQL_ROOT_PASSWORD"]
             initialDelaySeconds: 10
-            periodSeconds: 5
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 5
           # environment variables
           env:
             - name: MYSQL_DATABASE
@@ -63,7 +70,7 @@ spec:
           resources:
             requests:
               memory: "512Mi"
-              cpu: "250m"
+              cpu: "500m"
             limits:
               memory: "1Gi"
               cpu: "1"

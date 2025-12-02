@@ -139,3 +139,4 @@ data:
 kind: ConfigMap
 metadata:
   name: db-query
+  namespace: db
