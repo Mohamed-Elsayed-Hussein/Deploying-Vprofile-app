@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web01
+  name: web
   namespace: web
   labels:
-    app: web01
+    app: web
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web01
+      app: web
   template:
     metadata:
       labels:
-        app: web01
+        app: web
     spec:
       initContainers:
         - name: generate-ssl
